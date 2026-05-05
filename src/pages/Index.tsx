@@ -16,6 +16,19 @@ import { Contact } from "@/components/site/Contact";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { LeadGate } from "@/components/site/LeadGate";
 import { Footer } from "@/components/site/Footer";
+import { Problem } from "@/components/site/added/Problem";
+import { Solution } from "@/components/site/added/Solution";
+import { WhatWeBuild } from "@/components/site/added/WhatWeBuild";
+import { UseCaseExplorer } from "@/components/site/added/UseCaseExplorer";
+import { AISolutions } from "@/components/site/added/AISolutions";
+import { IndustrySolutions } from "@/components/site/added/IndustrySolutions";
+import { HowItWorks } from "@/components/site/added/HowItWorks";
+import { HowWeWork } from "@/components/site/added/HowWeWork";
+import { WhyIntelliSys } from "@/components/site/added/WhyIntelliSys";
+import { EcosystemCTA } from "@/components/site/added/EcosystemCTA";
+import { CommunityFAQ } from "@/components/site/added/CommunityFAQ";
+import { Emerging } from "@/components/site/added/Emerging";
+import { Partners } from "@/components/site/added/Partners";
 import { Pkg } from "@/lib/pricing";
 
 const Index = () => {
@@ -35,17 +48,30 @@ const Index = () => {
     <main className="min-h-screen scroll-smooth">
       <Nav onCalc={() => scrollTo("calculator")} />
       <Hero onCalc={() => scrollTo("calculator")} onStart={() => scrollTo("services")} />
+      <Problem />
+      <Solution />
+      <WhatWeBuild />
       <Services />
+      <AISolutions />
+      <UseCaseExplorer />
       <Industries />
+      <IndustrySolutions />
       <Portfolio />
+      <HowItWorks />
+      <HowWeWork />
       <WhyUs />
+      <WhyIntelliSys />
       <About />
       <Pricing onProceed={(pkg) => openGate({ pkg })} />
       <Calculator onGetProposal={(d) => openGate(d)} />
       <Funnel />
       <Trust />
+      <EcosystemCTA />
+      <Emerging />
       <Insights />
       <FAQ />
+      <CommunityFAQ />
+      <Partners />
       <Contact />
       <FinalCTA onCalc={() => scrollTo("calculator")} />
       <Footer />

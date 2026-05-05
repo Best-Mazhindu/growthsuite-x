@@ -23,7 +23,7 @@ const services = [
 ];
 
 export const Services = () => (
-  <section id="services" className="py-24 relative">
+  <section id="services" className="py-24 relative scroll-mt-20">
     <div className="container">
       <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-in">
         <span className="text-sm font-medium text-primary uppercase tracking-wider">What we do</span>

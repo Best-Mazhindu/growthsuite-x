@@ -15,7 +15,7 @@ export const Pricing = ({ onProceed }: Props) => {
   const cat = categories.find((c) => c.id === active)!;
 
   return (
-    <section id="pricing" className="py-24 bg-gradient-soft relative">
+    <section id="pricing" className="py-24 bg-gradient-soft relative scroll-mt-20">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-sm font-medium text-primary uppercase tracking-wider">Pricing</span>

@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calculator } from "lucide-react";
+import { ArrowRight, Calculator, Rocket, Network } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import logo from "@/assets/intellisys-logo.png";
+import { waLink } from "@/lib/pricing";
 
 const slides = [
   {
-    eyebrow: "Intelligent Systems",
-    title: "Build, Grow & Automate Your Business with Intelligent Systems",
-    sub: "Software, marketing, and AI — engineered to sell while you sleep.",
+    eyebrow: "Intelli-Sys",
+    title: "Build, Scale & Automate with Intelli-Sys",
+    sub: "We design intelligent systems combining software, AI, and growth strategies to transform businesses.",
   },
   {
     eyebrow: "Idea → Product",
-    title: "From Idea to Scalable Software — We Build It All",
-    sub: "MVPs to enterprise platforms, shipped fast and built to scale.",
+    title: "From Idea to Scalable Software — Engineered to Win",
+    sub: "MVPs to enterprise platforms, shipped fast and built to scale with you.",
   },
   {
     eyebrow: "AI-Powered",
-    title: "Turn Your Business into an AI-Powered Machine",
-    sub: "Automations, agents, and data pipelines that compound results.",
+    title: "Turn Your Business into an AI-Powered Ecosystem",
+    sub: "Automations, agents, and data pipelines that compound results day after day.",
   },
 ];
 
@@ -34,7 +36,7 @@ export const Hero = ({ onCalc, onStart }: Props) => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden min-h-[92vh] flex items-center">
+    <section id="home" className="relative overflow-hidden min-h-[92vh] flex items-center">
       <img
         src={heroBg}
         alt=""
@@ -45,6 +47,7 @@ export const Hero = ({ onCalc, onStart }: Props) => {
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
       <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-primary/20 blur-3xl animate-float" />
       <div className="absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full bg-accent/40 blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
+      <img src={logo} alt="" aria-hidden className="absolute right-6 bottom-6 w-32 md:w-44 opacity-10 pointer-events-none select-none" />
 
       <div className="container relative z-10 py-24">
         <div className="max-w-4xl mx-auto text-center">
@@ -65,12 +68,17 @@ export const Hero = ({ onCalc, onStart }: Props) => {
             </div>
           ))}
 
-          <div className="flex flex-wrap items-center justify-center gap-4 relative z-10">
-            <Button size="lg" onClick={onStart} className="bg-gradient-hero shadow-glow hover:shadow-glow hover:opacity-95 transition-smooth gap-2 h-14 px-8 text-base">
-              Get Started <ArrowRight className="w-4 h-4" />
+          <div className="flex flex-wrap items-center justify-center gap-3 relative z-10">
+            <Button asChild size="lg" className="bg-gradient-hero shadow-glow hover:opacity-95 transition-smooth gap-2 h-14 px-7 text-base">
+              <a href={waLink("Hi Intelli-Sys, I'd like to book a free AI consultation.")} target="_blank" rel="noopener noreferrer">
+                <Rocket className="w-4 h-4" /> Book Free AI Consultation
+              </a>
             </Button>
-            <Button size="lg" variant="outline" onClick={onCalc} className="glass h-14 px-8 text-base gap-2 border-primary/20 hover:border-primary/50">
-              <Calculator className="w-4 h-4" /> Calculate Pricing
+            <Button size="lg" variant="outline" onClick={onStart} className="glass h-14 px-7 text-base gap-2 border-primary/20 hover:border-primary/50">
+              <Network className="w-4 h-4" /> Join the AI Ecosystem
+            </Button>
+            <Button size="lg" variant="ghost" onClick={onCalc} className="h-14 px-7 text-base gap-2 hover:bg-primary/10">
+              <Calculator className="w-4 h-4" /> Calculate Pricing <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
 

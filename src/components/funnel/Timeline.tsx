@@ -1,7 +1,7 @@
 import { Clock } from "lucide-react";
 
-export const Timeline = ({ eyebrow, title, items }: { eyebrow: string; title: string; items: { phase: string; duration: string }[] }) => (
-  <section className="py-20 bg-gradient-soft">
+export const Timeline = ({ eyebrow, title, items, tone = "sky" }: { eyebrow: string; title: string; items: { phase: string; duration: string }[]; tone?: "white" | "surface" | "sky" | "soft" }) => (
+  <section className={`py-20 ${tone === "soft" ? "bg-gradient-soft" : tone === "surface" ? "bg-surface" : tone === "sky" ? "bg-sky" : ""}`}>
     <div className="container">
       <div className="text-center max-w-2xl mx-auto mb-12">
         <span className="text-sm font-medium text-primary uppercase tracking-wider">{eyebrow}</span>

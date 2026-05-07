@@ -6,8 +6,8 @@ export interface ServiceItem {
   items: string[];
 }
 
-export const ServiceGrid = ({ eyebrow, title, subtitle, services }: { eyebrow: string; title: string; subtitle: string; services: ServiceItem[] }) => (
-  <section className="py-24 relative">
+export const ServiceGrid = ({ eyebrow, title, subtitle, services, tone = "white" }: { eyebrow: string; title: string; subtitle: string; services: ServiceItem[]; tone?: "white" | "surface" | "sky" }) => (
+  <section className={`py-24 relative ${tone === "surface" ? "bg-surface" : tone === "sky" ? "bg-sky" : ""}`}>
     <div className="container">
       <div className="text-center max-w-2xl mx-auto mb-14">
         <span className="text-sm font-medium text-primary uppercase tracking-wider">{eyebrow}</span>

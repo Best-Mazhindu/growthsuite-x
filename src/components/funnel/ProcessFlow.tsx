@@ -1,5 +1,5 @@
-export const ProcessFlow = ({ eyebrow, title, steps }: { eyebrow: string; title: string; steps: { title: string; desc: string }[] }) => (
-  <section className="py-24 relative">
+export const ProcessFlow = ({ eyebrow, title, steps, tone = "white" }: { eyebrow: string; title: string; steps: { title: string; desc: string }[]; tone?: "white" | "surface" | "sky" }) => (
+  <section className={`py-24 relative ${tone === "surface" ? "bg-surface" : tone === "sky" ? "bg-sky" : ""}`}>
     <div className="container">
       <div className="text-center max-w-2xl mx-auto mb-14">
         <span className="text-sm font-medium text-primary uppercase tracking-wider">{eyebrow}</span>

@@ -16,6 +16,10 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { waLink } from "@/lib/pricing";
 import heroImg from "@/assets/dev-hero.jpg";
+import humanDev from "@/assets/human-dev.jpg";
+import humanTeam from "@/assets/human-team.jpg";
+import { HumanFeature } from "@/components/funnel/HumanFeature";
+import { DeepBand } from "@/components/funnel/DeepBand";
 
 const services = [
   { icon: Globe, title: "Website Development", items: ["Corporate sites", "Landing pages", "CMS-powered sites"] },
@@ -134,13 +138,53 @@ const SystemsDevelopment = () => {
         stats={[{ value: "80+", label: "Systems Built" }, { value: "99.9%", label: "Uptime" }, { value: "4wk", label: "MVP Speed" }]}
       />
       <ServiceGrid eyebrow="Development Services" title="Every System Your Business Needs" subtitle="From websites to enterprise SaaS — engineered to scale." services={services} />
+      <HumanFeature
+        eyebrow="Engineers You Can Talk To"
+        title="A senior team — not an outsourced ticket queue"
+        description="Every project is led by experienced developers who understand your business, write clean code, and ship on time. You'll know your team by name."
+        bullets={[
+          { icon: Code2, label: "Senior full-stack engineers on every project" },
+          { icon: Layers, label: "Architecture designed for 10x growth" },
+          { icon: ShieldCheck, label: "Security & code reviews built into the process" },
+        ]}
+        image={humanDev}
+        imageSide="right"
+        variant="sky"
+        floatStat={{ value: "99.9%", label: "Uptime SLA" }}
+      />
       <PricingTiers eyebrow="Packages" title="Development Packages" tiers={tiers} showToggle={false} />
+      <DeepBand
+        eyebrow="End-to-End Digital Transformation"
+        title="From idea to production — under one roof"
+        description="Discovery, design, engineering, DevOps and support. One team accountable for the whole journey."
+        stats={[
+          { value: "80+", label: "Systems built" },
+          { value: "4 wk", label: "MVP speed" },
+          { value: "99.9%", label: "Uptime" },
+          { value: "100%", label: "Code ownership" },
+        ]}
+        ctaLabel="Start your project"
+        ctaMessage="Hi Intelli-Sys, I'd like to book a free discovery call for a custom system."
+      />
       <Calc />
-      <ProcessFlow eyebrow="Our Process" title="How We Build" steps={steps} />
-      <Timeline eyebrow="Timelines" title="Project Phases" items={timelines} />
+      <HumanFeature
+        eyebrow="Built With Your Team"
+        title="Weekly demos, full transparency, zero surprises"
+        description="Agile sprints, weekly walkthroughs, and a shared backlog you can see in real time. No more black-box development."
+        bullets={[
+          { icon: Rocket, label: "Weekly demos & sprint planning" },
+          { icon: Wrench, label: "Dedicated maintenance & feature pipelines" },
+          { icon: Cloud, label: "Cloud-native deployment on day one" },
+        ]}
+        image={humanTeam}
+        imageSide="left"
+        variant="light"
+      />
+      <ProcessFlow eyebrow="Our Process" title="How We Build" steps={steps} tone="sky" />
+      <Timeline eyebrow="Timelines" title="Project Phases" items={timelines} tone="surface" />
       <WhyCards eyebrow="Why Intelli-Sys" title="Engineering Excellence" cards={whys} />
       <TestimonialsSlider />
-      <FAQAccordion items={faqs} />
+      <FAQAccordion items={faqs} tone="surface" />
       <LeadForm category="systems-development" headline="Build Your Next Digital System With Intelli-Sys" subline="Send us your project details — we'll respond with scope, timeline, and pricing within 24 hours." ctaLabel="Request Development Quote" waMessagePrefix="Hi Intelli-Sys, I want to build a custom system." />
     </FunnelShell>
   );

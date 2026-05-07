@@ -16,6 +16,10 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { waLink } from "@/lib/pricing";
 import heroImg from "@/assets/ai-hero.jpg";
+import humanAI from "@/assets/human-ai.jpg";
+import humanTeam from "@/assets/human-team.jpg";
+import { HumanFeature } from "@/components/funnel/HumanFeature";
+import { DeepBand } from "@/components/funnel/DeepBand";
 
 const services = [
   { icon: Bot, title: "AI Chatbots", items: ["24/7 customer engagement", "Multi-channel deployment", "Lead capture & qualification"] },
@@ -131,13 +135,52 @@ const AISolutionsPage = () => {
         stats={[{ value: "60%", label: "Cost Cut" }, { value: "24/7", label: "AI Uptime" }, { value: "10x", label: "Faster" }]}
       />
       <ServiceGrid eyebrow="AI Services" title="Intelligent Solutions Built For You" subtitle="From chatbots to enterprise ML — we ship AI that actually works." services={services} />
+      <HumanFeature
+        eyebrow="AI With A Human Touch"
+        title="Real consultants. Real models. Real ROI."
+        description="We don't drop AI on you and disappear. Our consultants sit with your team to design automations and agents that solve specific business problems."
+        bullets={[
+          { icon: Brain, label: "Bespoke AI agents trained on your data" },
+          { icon: Workflow, label: "End-to-end workflow automation" },
+          { icon: ShieldCheck, label: "Private deployments — your data stays yours" },
+        ]}
+        image={humanAI}
+        imageSide="right"
+        variant="sky"
+        floatStat={{ value: "60%", label: "Cost reduction" }}
+      />
       <PricingTiers eyebrow="AI Packages" title="Pick Your AI Tier" tiers={tiers} showToggle={false} />
+      <DeepBand
+        eyebrow="Trusted By Growing Enterprises"
+        title="Why teams choose Intelli-Sys for AI"
+        description="Africa-focused AI built on world-class infrastructure — fast to deploy, safe to scale."
+        features={[
+          { icon: Brain, title: "AI-First DNA", desc: "Models, agents and automations are our core craft." },
+          { icon: Cloud, title: "Enterprise Cloud", desc: "AWS, GCP, Azure — your choice of region." },
+          { icon: ShieldCheck, title: "Private & Compliant", desc: "Your data never trains public models." },
+        ]}
+        ctaLabel="Talk to an AI consultant"
+        ctaMessage="Hi Intelli-Sys, I'd like a free AI consultation."
+      />
       <Calc />
-      <ProcessFlow eyebrow="AI Process" title="From Concept to Deployment" steps={steps} />
-      <Timeline eyebrow="Timelines" title="AI Project Phases" items={timelines} />
+      <HumanFeature
+        eyebrow="Adoption That Actually Sticks"
+        title="We train your team to win with AI"
+        description="Every deployment includes onboarding, documentation, and live training sessions so your people own the tools — not just rent them."
+        bullets={[
+          { icon: GraduationCap, label: "Hands-on team workshops" },
+          { icon: Users, label: "Champion enablement program" },
+          { icon: Rocket, label: "Continuous optimisation post-launch" },
+        ]}
+        image={humanTeam}
+        imageSide="left"
+        variant="light"
+      />
+      <ProcessFlow eyebrow="AI Process" title="From Concept to Deployment" steps={steps} tone="sky" />
+      <Timeline eyebrow="Timelines" title="AI Project Phases" items={timelines} tone="surface" />
       <WhyCards eyebrow="Why Intelli-Sys AI" title="The AI Partner of Choice" cards={whys} />
       <TestimonialsSlider />
-      <FAQAccordion items={faqs} />
+      <FAQAccordion items={faqs} tone="surface" />
       <LeadForm category="ai-solutions" headline="Start Your AI Transformation Today" subline="Schedule a demo or get a custom AI proposal — free." ctaLabel="Get Proposal" waMessagePrefix="Hi Intelli-Sys, I want to start my AI transformation." />
     </FunnelShell>
   );

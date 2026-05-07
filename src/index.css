@@ -42,6 +42,8 @@ All colors MUST be HSL.
     --gradient-hero: linear-gradient(135deg, hsl(205 90% 52%) 0%, hsl(200 95% 65%) 50%, hsl(215 35% 18%) 100%);
     --gradient-soft: linear-gradient(180deg, hsl(210 40% 98%) 0%, hsl(200 95% 96%) 100%);
     --gradient-card: linear-gradient(135deg, hsl(0 0% 100% / 0.7), hsl(200 95% 95% / 0.4));
+    --gradient-deep: linear-gradient(135deg, hsl(215 60% 10%) 0%, hsl(215 55% 16%) 50%, hsl(205 70% 22%) 100%);
+    --gradient-sky: linear-gradient(180deg, hsl(200 95% 96%) 0%, hsl(205 90% 92%) 100%);
     --shadow-glow: 0 20px 60px -20px hsl(205 90% 52% / 0.35);
     --shadow-soft: 0 10px 40px -10px hsl(215 35% 12% / 0.1);
     --shadow-card: 0 4px 24px -4px hsl(215 35% 12% / 0.08);
@@ -134,5 +136,20 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+  .bg-deep {
+    background: var(--gradient-deep);
+    color: hsl(0 0% 100%);
+  }
+  .bg-sky {
+    background: var(--gradient-sky);
+  }
+  .bg-surface {
+    background: hsl(215 25% 97%);
+  }
+  .glass-on-deep {
+    background: hsl(0 0% 100% / 0.06);
+    backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid hsl(0 0% 100% / 0.14);
   }
 }

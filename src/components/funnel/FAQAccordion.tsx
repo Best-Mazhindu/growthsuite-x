@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-export const FAQAccordion = ({ items }: { items: { q: string; a: string }[] }) => (
-  <section className="py-20">
+export const FAQAccordion = ({ items, tone = "white" }: { items: { q: string; a: string }[]; tone?: "white" | "surface" | "sky" }) => (
+  <section className={`py-20 ${tone === "surface" ? "bg-surface" : tone === "sky" ? "bg-sky" : ""}`}>
     <div className="container max-w-3xl">
       <div className="text-center mb-10">
         <span className="text-sm font-medium text-primary uppercase tracking-wider">FAQ</span>

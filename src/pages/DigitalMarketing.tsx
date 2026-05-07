@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Share2, Bot, Search, Image as ImageIcon, Megaphone, BarChart3, Zap, Globe2, Users, ShieldCheck, Sparkles, TrendingUp } from "lucide-react";
+import { Share2, Bot, Search, Image as ImageIcon, Megaphone, BarChart3, Zap, Globe2, Users, ShieldCheck, Sparkles, TrendingUp, Target, LineChart, Rocket, Award } from "lucide-react";
 import { FunnelShell } from "@/components/funnel/FunnelShell";
 import { FunnelHero } from "@/components/funnel/FunnelHero";
 import { ServiceGrid } from "@/components/funnel/ServiceGrid";
@@ -16,6 +16,10 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { waLink } from "@/lib/pricing";
 import heroImg from "@/assets/marketing-hero.jpg";
+import humanMarketing from "@/assets/human-marketing.jpg";
+import humanTeam from "@/assets/human-team.jpg";
+import { HumanFeature } from "@/components/funnel/HumanFeature";
+import { DeepBand } from "@/components/funnel/DeepBand";
 
 const services = [
   { icon: Share2, title: "Social Media Marketing", items: ["Facebook marketing", "Instagram growth", "LinkedIn marketing", "TikTok marketing", "Content management"] },
@@ -135,13 +139,53 @@ const DigitalMarketing = () => {
         stats={[{ value: "+312%", label: "Avg. ROAS" }, { value: "150+", label: "Campaigns" }, { value: "24h", label: "Setup" }]}
       />
       <ServiceGrid eyebrow="Services" title="Everything You Need to Grow Online" subtitle="Full-stack marketing — from strategy to creative to automation." services={services} />
+      <HumanFeature
+        eyebrow="Real Marketing Partners"
+        title="A growth team that feels like part of yours"
+        description="We pair every campaign with a strategist who understands your market — from local Zimbabwean retail to pan-African scale-ups. You get faces, not faceless dashboards."
+        bullets={[
+          { icon: Target, label: "Dedicated strategist on WhatsApp & email" },
+          { icon: LineChart, label: "Live dashboards — see every dollar working" },
+          { icon: Sparkles, label: "AI-assisted creative produced weekly" },
+        ]}
+        image={humanMarketing}
+        imageSide="right"
+        variant="sky"
+        floatStat={{ value: "+312%", label: "Avg. ROAS lift" }}
+      />
       <PricingTiers eyebrow="Packages" title="Choose Your Growth Plan" tiers={tiers} />
+      <DeepBand
+        eyebrow="AI-Powered Business Growth"
+        title="Marketing engineered for measurable revenue"
+        description="We blend creative, paid media, automation, and analytics into one accountable growth system."
+        stats={[
+          { value: "150+", label: "Campaigns shipped" },
+          { value: "+312%", label: "Avg. ROAS" },
+          { value: "24h", label: "Setup time" },
+          { value: "92%", label: "Client retention" },
+        ]}
+        ctaLabel="Book a free strategy call"
+        ctaMessage="Hi Intelli-Sys, I'd like a free digital marketing strategy call."
+      />
       <Calc />
-      <ProcessFlow eyebrow="Our Process" title="How We Drive Growth" steps={steps} />
-      <Timeline eyebrow="Timelines" title="What to Expect" items={timelines} />
+      <HumanFeature
+        eyebrow="From Brief To Launch"
+        title="Campaigns live in days — optimised every week"
+        description="Our weekly cadence keeps creative fresh and budget allocated to your top performers. You're never waiting a quarter to see what's working."
+        bullets={[
+          { icon: Rocket, label: "First campaigns live within 7 days" },
+          { icon: Award, label: "Weekly creative refresh — no ad fatigue" },
+          { icon: BarChart3, label: "Monthly performance reports & roadmap" },
+        ]}
+        image={humanTeam}
+        imageSide="left"
+        variant="light"
+      />
+      <ProcessFlow eyebrow="Our Process" title="How We Drive Growth" steps={steps} tone="sky" />
+      <Timeline eyebrow="Timelines" title="What to Expect" items={timelines} tone="surface" />
       <WhyCards eyebrow="Why Intelli-Sys" title="Built for Performance" cards={whys} />
       <TestimonialsSlider />
-      <FAQAccordion items={faqs} />
+      <FAQAccordion items={faqs} tone="surface" />
       <LeadForm category="digital-marketing" headline="Ready To Grow Your Brand?" subline="Tell us about your business — we'll send back a tailored growth plan within 24 hours." ctaLabel="Request Quotation" waMessagePrefix="Hi Intelli-Sys, I want to grow my brand with your marketing services." />
     </FunnelShell>
   );

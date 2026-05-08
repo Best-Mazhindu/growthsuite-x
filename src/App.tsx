@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound.tsx";
 import DigitalMarketing from "./pages/DigitalMarketing.tsx";
 import AISolutionsPage from "./pages/AISolutions.tsx";
 import SystemsDevelopment from "./pages/SystemsDevelopment.tsx";
+import DigitalStore from "./pages/DigitalStore.tsx";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/digital-marketing" element={<DigitalMarketing />} />
           <Route path="/ai-solutions" element={<AISolutionsPage />} />
           <Route path="/systems-development" element={<SystemsDevelopment />} />
+          <Route path="/digital-store" element={<DigitalStore />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

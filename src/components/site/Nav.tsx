@@ -19,7 +19,8 @@ const links = [
 const funnels = [
   { to: "/digital-marketing", label: "Digital Marketing" },
   { to: "/ai-solutions", label: "AI Solutions" },
-  { to: "/systems-development", label: "Systems Development" },
+  { to: "/systems-development", label: "Development" },
+  { to: "/digital-store", label: "IS Digital Store" },
 ];
 
 export const Nav = ({ onCalc }: { onCalc: () => void }) => {
